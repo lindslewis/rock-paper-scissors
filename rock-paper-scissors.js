@@ -22,23 +22,100 @@
 
 //keep playing until quit
 
-//the index: starts at 0, so Joe is 0, Henry is 1, etc.
-var names = ["Joe", "Henry", "William", "Niles"]
 
 //THIS GIVES A RANDOM NUMBER FROM 0 TO O.9999999999
-var randomNum = Math.random()
-console.log(randomNum)
+// var randomNum = Math.random()
+// console.log(randomNum)
 
-//names length is how many items are in the names var
-var numTimesLength = randomNum * names.length
-console.log(numTimesLength)
+// //names length is how many items are in the names var
+// var numTimesLength = randomNum * names.length
+// console.log(numTimesLength)
 
-//this method will round a number down
-var roundDown = Math.floor()
-console.log (roundDown)
-console.log(names[roundDown])
+// //this method will round a number down
+// var roundDown = Math.floor()
+// console.log (roundDown)
+// console.log(names[roundDown])
+//the index: starts at 0, so Joe is 0, Henry is 1, etc.
 
+var result = ["Congrats! You win!", "Boo. You lose!", "No difference. It's a tie!"]
+//going to need an edgecase
+var choices = ["R", "P", "S"]
+var wins = 0
+var ties = 0
+var losses = 0
+
+// let initialChoice = ["Y", "N"]
 
 //the above starting at var names is how to get a random number/selection, can consolidate, see below
 //this below, read from the inside out!!!!! so start with the yellow parantheses
-console.log(names[Math.floor(Math.random()*names.length)])
+// console.log(names[Math.floor(Math.random()*names.length)])
+
+// alert("Would you like to play a game?")
+function initialChoice() {
+    let initialChoice = confirm("Would you like to play a game?");
+    if(initialChoice){
+       startGame()
+    } else{
+        alert("Why are you here?")
+        initialChoice()
+    }
+}
+
+function startGame() {
+    var userInput = prompt("It is your turn! Select R, P, or S");
+    userInput = userInput.toUpperCase()
+    checkChoice(userInput)
+}
+function checkChoice(userInput) {
+    console.log(userInput)
+    if(userInput == "R" || userInput == "P" || userInput == "S"){
+        var compChoice = choices[Math.floor(Math.random()*choices.length)]
+    } else{
+        alert("Can you read? Invalid choice.")
+        startGame()
+    }
+        if(compChoice == userInput){
+            alert("No difference, it's a tie.")
+            // ties = ties+1 equivalent below
+            ties++
+            startGame()
+        }
+
+        if(userInput == "R") {
+            if(compChoice == "S"){
+                alert("Who would have thought... You won!")
+                wins++
+                startGame()
+            }
+            if (compChoice == "P"){
+                alert("Ha. You're the loser.")
+                losses++
+                startGame()
+            }
+        }
+        if(userInput == "P") {
+            if(compChoice == "R"){
+                alert("Look at you. Full of surprises here. You win.")
+                wins++
+                startGame()
+            }
+            if(compChoice == "S"){
+                alert("No surprises here. You lose.")
+                losses++
+                startGame()
+            }
+        }
+        if(userInput == "S") {
+            if (compChoice == "P"){
+                alert("Are you cheating? You win.")
+                wins++
+                startGame()
+            }
+            if(compChoice == "R"){
+                alert("Frustrated? You've lost.")
+                losses++
+                startGame()
+            }
+        }
+    }
+initialChoice()
