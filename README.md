@@ -5,10 +5,10 @@ We all grew up playing "Rock, Paper, Scissors" (or variations of it). This page 
 Give it a try, hopefully it'll be a good way to pass some time and receive a little sass.
 
 ## table-of-contents
-1. usage
-2. composition
-3. lessons-learned
-4. credits
+1. [usage](##usage)
+2. [composition](##composition)
+3. [lessons-learned](##lessons-learned)
+4. [credits](##credits)
 
  ![rps-webpage](https://user-images.githubusercontent.com/104105172/175758031-b429b149-88fe-4d98-9db1-0f6514c12f24.jpg)
  
