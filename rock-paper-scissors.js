@@ -44,6 +44,9 @@ var wins = 0
 var ties = 0
 var losses = 0
 
+
+
+
 // let initialChoice = ["Y", "N"]
 
 //the above starting at var names is how to get a random number/selection, can consolidate, see below
@@ -117,5 +120,9 @@ function checkChoice(userInput) {
                 startGame()
             }
         }
+        alert("Stats:\n Wins:" +wins+ "\n Losses:" +losses+ "\n Ties:" +ties+ "\n Keep going!");
     }
+
 initialChoice()
+
+//window.alert for stats
