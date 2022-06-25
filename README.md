@@ -1,4 +1,4 @@
-# rock-paper-scissors
+# [rock-paper-scissors](https://lindslewis.github.io/rock-paper-scissors/)
 
 ## description
 We all grew up playing "Rock, Paper, Scissors" (or variations of it). This page was created as my first real dive into Java Script, following a mini-project assignment received in my coding bootcamp with the University of Washington. 
