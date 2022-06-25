@@ -37,12 +37,7 @@
 // console.log(names[roundDown])
 //the index: starts at 0, so Joe is 0, Henry is 1, etc.
 
-var result = ["Congrats! You win!", "Boo. You lose!", "No difference. It's a tie!"]
-//going to need an edgecase
-var choices = ["R", "P", "S"]
-var wins = 0
-var ties = 0
-var losses = 0
+
 
 
 
@@ -54,6 +49,13 @@ var losses = 0
 // console.log(names[Math.floor(Math.random()*names.length)])
 
 // alert("Would you like to play a game?")
+
+var result = ["Congrats! You win!", "Boo. You lose!", "No difference. It's a tie!"]
+var choices = ["R", "P", "S"]
+var wins = 0
+var ties = 0
+var losses = 0
+
 function initialChoice() {
     let initialChoice = confirm("Would you like to play a game?");
     if(initialChoice){
@@ -81,6 +83,7 @@ function checkChoice(userInput) {
             alert("No difference, it's a tie.")
             // ties = ties+1 equivalent below
             ties++
+            alert("Stats:\n Wins:" +wins+ "\n Losses:" +losses+ "\n Ties:" +ties+ "\n Keep going!");
             startGame()
         }
 
@@ -88,11 +91,13 @@ function checkChoice(userInput) {
             if(compChoice == "S"){
                 alert("Who would have thought... You won!")
                 wins++
+                alert("Stats:\n Wins:" +wins+ "\n Losses:" +losses+ "\n Ties:" +ties+ "\n Keep going!");
                 startGame()
             }
             if (compChoice == "P"){
                 alert("Ha. You're the loser.")
                 losses++
+                alert("Stats:\n Wins:" +wins+ "\n Losses:" +losses+ "\n Ties:" +ties+ "\n Keep going!");
                 startGame()
             }
         }
@@ -100,11 +105,13 @@ function checkChoice(userInput) {
             if(compChoice == "R"){
                 alert("Look at you. Full of surprises here. You win.")
                 wins++
+                alert("Stats:\n Wins:" +wins+ "\n Losses:" +losses+ "\n Ties:" +ties+ "\n Keep going!");
                 startGame()
             }
             if(compChoice == "S"){
                 alert("No surprises here. You lose.")
                 losses++
+                alert("Stats:\n Wins:" +wins+ "\n Losses:" +losses+ "\n Ties:" +ties+ "\n Keep going!");
                 startGame()
             }
         }
@@ -112,17 +119,18 @@ function checkChoice(userInput) {
             if (compChoice == "P"){
                 alert("Are you cheating? You win.")
                 wins++
+                alert("Stats:\n Wins:" +wins+ "\n Losses:" +losses+ "\n Ties:" +ties+ "\n Keep going!");
                 startGame()
             }
             if(compChoice == "R"){
                 alert("Frustrated? You've lost.")
                 losses++
+                alert("Stats:\n Wins:" +wins+ "\n Losses:" +losses+ "\n Ties:" +ties+ "\n Keep going!");
                 startGame()
             }
         }
-        alert("Stats:\n Wins:" +wins+ "\n Losses:" +losses+ "\n Ties:" +ties+ "\n Keep going!");
+        
     }
-
 initialChoice()
 
 //window.alert for stats
